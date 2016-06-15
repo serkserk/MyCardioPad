@@ -25,6 +25,7 @@ import com.mycardiopad.g1.mycardiopad.fragment.Fragment_SignUp_Ecran3;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
 import com.mycardiopad.g1.mycardiopad.util.Notification;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -208,7 +209,7 @@ public class Activity_SignUp extends AppCompatActivity {
                                 RequestBody requestBody = multipartBuilder.build();
 
                                 final Request request = new Request.Builder()
-                                        .url("http://journaldesilver.com/api/signup/")
+                                        .url(ServeurURL.SIGNUP)
                                         .post(requestBody)
                                         .build();
 

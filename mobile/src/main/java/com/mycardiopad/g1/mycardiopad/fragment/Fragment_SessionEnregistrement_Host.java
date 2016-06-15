@@ -46,6 +46,7 @@ import com.mycardiopad.g1.mycardiopad.database._Succes;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
 import com.mycardiopad.g1.mycardiopad.util.Notification;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 import com.mycardiopad.g1.mycardiopad.util.services.SendToDataLayerThread;
 
 import org.json.JSONException;
@@ -129,7 +130,7 @@ public class Fragment_SessionEnregistrement_Host extends Fragment implements Goo
                         .build();
 
                 Request request_succes = new Request.Builder()
-                        .url("http://journaldesilver.com/api/update_success/")
+                        .url(ServeurURL.UPDATE_SUCCES)
                         .post(formBody)
                         .build();
 

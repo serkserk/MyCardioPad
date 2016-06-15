@@ -13,6 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.mycardiopad.g1.mycardiopad.R;
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 
 /**
  * Réalisé par Vishnupriya le 21/03/16.  <br/>
@@ -33,7 +34,7 @@ public class Fragment_WebLicence extends Fragment {
         webViewLicence.getSettings().setJavaScriptEnabled(true);
         webViewLicence.clearCache(true);
         // Chargement de l'url
-        webViewLicence.loadUrl("http://journaldesilver.com/about/android.html");
+        webViewLicence.loadUrl(ServeurURL.ABOUT);
         webViewLicence.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {

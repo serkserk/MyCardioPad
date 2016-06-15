@@ -22,6 +22,7 @@ import com.mycardiopad.g1.mycardiopad.database._Compte;
 import com.mycardiopad.g1.mycardiopad.database._Programme;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -171,7 +172,7 @@ public class Fragment_MonProgramme_Host extends Fragment {
      */
     private void updateProgramme(String email, final View v) {
         Request request = new Request.Builder()
-                .url("http://journaldesilver.com/api/get_current_ordonnance/?email=" + email)
+                .url( ServeurURL.GET_CURRENT_ORDONANCE + email)
                 .get()
                 .build();
 

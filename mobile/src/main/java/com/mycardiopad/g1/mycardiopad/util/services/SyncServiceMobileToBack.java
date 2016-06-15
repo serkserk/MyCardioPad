@@ -12,6 +12,7 @@ import com.mycardiopad.g1.mycardiopad.database._Capture;
 import com.mycardiopad.g1.mycardiopad.database._Compte;
 import com.mycardiopad.g1.mycardiopad.database._Programme;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,7 +56,7 @@ public class SyncServiceMobileToBack extends Service {
                 while (true){
                    // Vérifier ici le nombre de captures
                     Request request = new Request.Builder()
-                            .url("http://journaldesilver.com/api/get_capture_count/?email=" + compte.get_email())
+                            .url(ServeurURL.GET_CAPTURE_COUNT + compte.get_email())
                             .get()
                             .build();
 
@@ -122,7 +123,7 @@ public class SyncServiceMobileToBack extends Service {
                     .build();
 
             Request request = new Request.Builder()
-                    .url("http://journaldesilver.com/api/add_captures/")
+                    .url(ServeurURL.ADD_CAPTURE)
                     .post(formBody)
                     .build();
 
@@ -159,7 +160,7 @@ public class SyncServiceMobileToBack extends Service {
      */
     private void updateProgramme(String email) {
         Request request = new Request.Builder()
-                .url("http://journaldesilver.com/api/get_current_ordonnance/?email=" + email)
+                .url( ServeurURL.GET_CURRENT_ORDONANCE + email)
                 .get()
                 .build();
 

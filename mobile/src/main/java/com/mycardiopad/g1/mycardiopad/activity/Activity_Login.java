@@ -32,6 +32,7 @@ import com.mycardiopad.g1.mycardiopad.database._Succes;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
 import com.mycardiopad.g1.mycardiopad.util.Notification;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -303,7 +304,7 @@ public class Activity_Login extends AppCompatActivity {
 
         // Requête REST
         final Request[] request = {new Request.Builder()
-                .url("http://journaldesilver.com/api/login/?email=" + email + "&mot_de_passe=" + md5(password))
+                .url( ServeurURL.LOGIN + email + "&mot_de_passe=" + md5(password))
                 .get()
                 .build()};
 
@@ -393,7 +394,7 @@ public class Activity_Login extends AppCompatActivity {
      */
     private void initSuccess(String email) {
         Request request = new Request.Builder()
-                .url("http://journaldesilver.com/api/get_user_success/?email=" + email)
+                .url( ServeurURL.GET_USER_SUCCES + email)
                 .get()
                 .build();
 
@@ -446,7 +447,7 @@ public class Activity_Login extends AppCompatActivity {
      */
     private void initProgramme(String email) {
         Request request = new Request.Builder()
-                .url("http://journaldesilver.com/api/get_current_ordonnance/?email=" + email)
+                .url( ServeurURL.GET_CURRENT_ORDONANCE + email)
                 .get()
                 .build();
 
@@ -493,7 +494,7 @@ public class Activity_Login extends AppCompatActivity {
      */
     private void recupPhoto(long id) {
         try {
-            Bitmap photo = Picasso.with(getApplicationContext()).load("http://journaldesilver.com/uploaded_images/" +
+            Bitmap photo = Picasso.with(getApplicationContext()).load( ServeurURL.UPLOADED_IMAGE +
                    id + "/pp/pp_" + id + ".jpeg").get();
             FileOutputStream out = null;
             try {

@@ -15,6 +15,7 @@ import com.mycardiopad.g1.mycardiopad.R;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
 import com.mycardiopad.g1.mycardiopad.util.Notification;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -121,7 +122,7 @@ public class Activity_RetrievePassword  extends AppCompatActivity {
 
         // Requête REST
         final Request request = new Request.Builder()
-                .url("http://journaldesilver.com/api/forgot_password/index.php/?email=" + mail)
+                .url( ServeurURL.FORGOT_PASSWORD + mail)
                 .get()
                 .build();
 

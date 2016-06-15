@@ -3,6 +3,8 @@ package com.mycardiopad.g1.mycardiopad.activity;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
+
 import org.junit.Assert;
 
 import okhttp3.Request;
@@ -48,7 +50,7 @@ public class Activity_LoginTest extends ActivityInstrumentationTestCase2<Activit
     private Request[] createRequest(String email, String password){
         // Requête REST
         return new Request[]{new Request.Builder()
-                .url("http://journaldesilver.com/api/login/?email=" + email + "&mot_de_passe=" + activity_login.md5(password))
+                .url( ServeurURL.LOGIN + email + "&mot_de_passe=" + activity_login.md5(password))
                 .get()
                 .build()};
     }

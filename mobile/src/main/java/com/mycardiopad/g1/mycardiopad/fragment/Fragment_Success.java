@@ -17,6 +17,7 @@ import com.mycardiopad.g1.mycardiopad.database.MyDBHandler_Succes;
 import com.mycardiopad.g1.mycardiopad.database._Succes;
 import com.mycardiopad.g1.mycardiopad.util.Notification;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
+import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 import com.mycardiopad.g1.mycardiopad.util.Succes;
 
 import org.json.JSONArray;
@@ -57,7 +58,7 @@ public class Fragment_Success extends Fragment {
         listeSucces = new ArrayList<>();
 
         final Request request = new Request.Builder()
-                .url("http://journaldesilver.com/api/get_user_success/?email=" + dbc.getCompte(0).get_email())
+                .url(ServeurURL.GET_USER_SUCCES + dbc.getCompte(0).get_email())
                 .get()
                 .build();
 
@@ -143,7 +144,7 @@ public class Fragment_Success extends Fragment {
                                             .build();
 
                                     Request request_cadeau = new Request.Builder()
-                                            .url("http://journaldesilver.com/api/update_success/")
+                                            .url( ServeurURL.UPDATE_SUCCES)
                                             .post(formBody)
                                             .build();
 
