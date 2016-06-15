@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="library-1.0.8">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/mobile/build/intermediates/exploded-aar/com.liulishuo.magicprogresswidget/library/1.0.8/res" />
+      <root url="jar://$PROJECT_DIR$/mobile/build/intermediates/exploded-aar/com.liulishuo.magicprogresswidget/library/1.0.8/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.liulishuo.magicprogresswidget/library/1.0.8/caf4e4b34876237f73a9ca05975a82895ed68e3e/library-1.0.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

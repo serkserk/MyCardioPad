@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="library-0.1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mobile/build/intermediates/exploded-aar/cn.dreamtobe.percentsmoothhandler/library/0.1.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/mobile/build/intermediates/exploded-aar/cn.dreamtobe.percentsmoothhandler/library/0.1.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.dreamtobe.percentsmoothhandler/library/0.1.0/c67bb808a28b9005eb7b2c739996a871eab743/library-0.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

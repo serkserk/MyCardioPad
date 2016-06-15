@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/relativeLayout"
+    tools:context=".activity.Activity_Wear_Main"
+    tools:deviceIds="wear_square"
+    android:background="@color/white"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/heartButton"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:background="@drawable/mycardiopad"
+        android:layout_alignParentEnd="false"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/informationTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Information TextView"
+        android:layout_centerInParent="true"
+        android:paddingTop="70dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/informationTv">
+
+        <TextView
+            android:id="@+id/max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="max : "
+            android:textColor="@color/black"
+            android:layout_below="@+id/heartButton"
+            android:layout_toStartOf="@+id/informationTv"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="40dp" />
+
+        <TextView
+            android:id="@+id/min"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="min : "
+            android:layout_below="@+id/max"
+            android:layout_alignStart="@+id/max"
+            android:layout_toStartOf="@+id/informationTv"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="50dp" />
+    </FrameLayout>
+
+</RelativeLayout>

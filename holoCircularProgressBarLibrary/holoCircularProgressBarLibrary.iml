@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":library:holoCircularProgressBarLibrary" external.linked.project.path="$MODULE_DIR$/../library/holoCircularProgressBarLibrary" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="com.pascalwelsch.holocircularprogressbar" external.system.module.version="1.3" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="java-gradle" name="Java-Gradle">
+      <configuration>
+        <option name="BUILD_FOLDER_PATH" value="$MODULE_DIR$/build" />
+        <option name="BUILDABLE" value="false" />
+      </configuration>
+    </facet>
+    <facet type="android-gradle" name="Android-Gradle">
+      <configuration>
+        <option name="GRADLE_PROJECT_PATH" value=":library:holoCircularProgressBarLibrary" />
+      </configuration>
+    </facet>
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="SELECTED_TEST_ARTIFACT" value="_android_test_" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+        <afterSyncTasks>
+          <task>generateDebugSources</task>
+        </afterSyncTasks>
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/res" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+        <option name="LIBRARY_PROJECT" value="true" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/intermediates/classes/debug" />
+    <output-test url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/intermediates/classes/test/debug" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary">
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/source/r/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/source/aidl/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/source/rs/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/res/rs/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/res/resValues/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/source/r/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/source/aidl/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/source/rs/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/res/rs/androidTest/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/generated/res/resValues/androidTest/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/debug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/debug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/debug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/debug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/debug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/debug/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/debug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/testDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/testDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/testDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/testDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/testDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/testDebug/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/testDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/main/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/main/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/main/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/main/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/androidTest/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/androidTest/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/androidTest/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/androidTest/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/androidTest/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/androidTest/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/androidTest/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/test/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/src/test/rs" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/../library/holoCircularProgressBarLibrary/build/tmp" />
+    </content>
+    <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

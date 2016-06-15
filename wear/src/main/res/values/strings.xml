@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyCardioPad</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="attente_splash">Récupération des informations</string>
+</resources>

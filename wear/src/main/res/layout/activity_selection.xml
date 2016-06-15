@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.WatchViewStub
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/selection_watch_view_stub"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:rectLayout="@layout/rect_activity_selection"
+    app:roundLayout="@layout/round_activity_selection"
+    tools:context=".activity.Activity_Selection"
+    tools:deviceIds="wear">
+</android.support.wearable.view.WatchViewStub>
+

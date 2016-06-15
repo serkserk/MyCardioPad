@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mycardiopad.g1.mycardiopad">
+
+    <uses-feature android:name="android.hardware.type.watch" />
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <!-- Librairie pour maintenir l'application ouverte sur la montre -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+        <!-- Librairie pour maintenir l'application ouverte sur la montre -->
+        <uses-library android:name="com.google.android.wearable"
+            android:required="false" />
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!-- Ajout d'un service d'écoute pour la synchonisation des bases -->
+        <service android:name=".util.SyncService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+        </service>
+        <!-- Un mode "singleTask" car nous ne voulons qu'une seule activité -->
+        <activity
+            android:name=".activity.Activity_Wear_Main"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Wearable.Modal">
+        </activity>
+        <activity
+            android:name=".activity.Activity_Question"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Wearable.Modal">
+        </activity>
+        <activity
+            android:name=".activity.Activity_Selection"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Wearable.Modal">
+        </activity>
+        <activity
+            android:name=".activity.Activity_Wear_Splash"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Wearable.Modal">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

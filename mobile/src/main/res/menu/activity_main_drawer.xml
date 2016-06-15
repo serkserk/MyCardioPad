@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_session_enregistrement"
+            android:icon="@drawable/ic_launch_white_24dp"
+            android:title="@string/accueil" />
+        <item
+            android:id="@+id/nav_profil"
+            android:icon="@drawable/ic_account_circle_white_24dp"
+            android:title="Profil" />
+        <item
+            android:id="@+id/nav_historique"
+            android:icon="@drawable/ic_history_white_24dp"
+            android:title="@string/historique" />
+        <item
+            android:id="@+id/nav_monprogramme"
+            android:icon="@drawable/ic_schedule_white_24dp"
+            android:title="@string/mon_programme" />
+        <item
+            android:id="@+id/nav_succes"
+            android:icon="@drawable/ic_succes"
+            android:title="Succès" />
+        <item
+            android:id="@+id/nav_reglages"
+            android:icon="@drawable/ic_settings_applications_white_24dp"
+            android:title="Réglages" />
+
+    </group>
+</menu>

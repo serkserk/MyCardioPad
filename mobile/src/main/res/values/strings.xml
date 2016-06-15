@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">MyCardioPad</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Identifiant</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Connexion</string>
+    <string name="action_sign_up">S\'incrire</string>
+    <string name="action_name">MyCardioPad</string>
+    <string name="prompt_forgetpsw">Mot de passe oublié ?</string>
+    <string name="prompt_name">MyCardioPad</string>
+    <string name="img_courbe">Courbe</string>
+    <string name="error_invalid_email">L\'adresse mail est invalide.</string>
+    <string name="error_password_length">Le mot de passe est trop court, il faut au moins 8 caractères.</string>
+    <string name="error_password_upper">Le mot de passe doit contenir au moins une lettre majuscule.</string>
+    <string name="error_password_lower">Le mot de passe doit contenir au moins une lettre minuscule.</string>
+    <string name="error_password_digit">Le mot de passe doit contenir au moins un chiffre.</string>
+    <string name="error_incorrect_password">Le mot de passe est incorrecte.</string>
+    <string name="error_field_required">Ce champ est requis.</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="homme">Homme</string>
+    <string name="taille">Taille</string>
+    <string name="poids">Poids</string>
+    <string name="taille_cm">Taille (cm)</string>
+    <string name="poids_kg">Poids (kg)</string>
+    <string name="femme">Femme</string>
+    <string name="age">Age</string>
+    <string name="pr_nom">Prénom</string>
+    <string name="nom">Nom</string>
+    <string name="vous_concernant">Vous concernant</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="adresse_email">Adresse email</string>
+    <string name="votre_compte_utilisateur">Votre compte utilisateur :</string>
+    <string name="mon_programme">Mon programme</string>
+    <string name="ordonnance">Ordonnance</string>
+    <string name="historique">Historique</string>
+    <string name="accueil">Accueil</string>
+    <string name="compte">Compte</string>
+    <string name="reglages">Réglages</string>
+    <string name="a_propos">A propos</string>
+    <string name="textview">TextView</string>
+    <string name="langue">Langue</string>
+    <string name="unites">Unités</string>
+    <string name="distance">Distance</string>
+    <string name="notification">Notifications</string>
+    <string name="reinitialiser">Réinitialiser</string>
+    <string name="objectif_atteint">Recevoir une notification à chaque objectif atteint</string>
+    <string name="rappel">Rappel journalier</string>
+    <string name="badges">Recevoir une notification à chaque obtention d\'un nouveau badge</string>
+    <string name="audio">Retour Audio</string>
+    <string name="delete">Supprimer</string>
+    <string name="initialisation">Réinitialisation de l\'application</string>
+    <string name="version">Version 1.0</string>
+    <string name="licences">Licences open source</string>
+    <string name="peripherie">Périphérique</string>
+    <string name="montre">Avez vous une montre connectée ?</string>
+    <string name="default_save_emplacement_user">/sdcard/user.jpeg</string>
+    <string name="user_default">nom de l\'utilisateur</string>
+    <string name="user_email_deault"><![CDATA[email.utilisateur&gmail.com]]></string>
+    <string name="email_envoyé">Votre mot de passe est envoyé à votre boîte mail</string>
+    <string name="email_problem">Problème avec votre adresse email</string>
+    <string name="connexion">Connexion en cours...</string>
+
+    <string-array name="reperes">
+        <item>Mois</item>
+        <item>Semaine</item>
+        <item>Jour</item>
+    </string-array>
+
+    <string-array name="environnement">
+        <item>@drawable/ic_interieur</item>
+        <item>@drawable/ic_exterieur</item>
+    </string-array>
+
+    <string-array name="mode">
+        <item>@drawable/ic_avec_fc</item>
+        <item>@drawable/ic_sans_fc</item>
+    </string-array>
+    
+    <string-array name="Langues">
+        <item>Français</item>
+        <item>Anglais</item>
+    </string-array>
+
+    <string-array name="Taille">
+        <item>centimètres</item>
+        <item>pouces</item>
+    </string-array>
+
+    <string-array name="Poids">
+        <item>kilogrammes</item>
+        <item>livres</item>
+    </string-array>
+
+    <string-array name="Distance">
+        <item>kilomètres</item>
+        <item>miles</item>
+    </string-array>
+
+</resources>

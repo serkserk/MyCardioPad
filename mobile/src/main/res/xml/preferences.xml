@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="pref_key_langues"
+        android:title="Langue">
+        <ListPreference
+            android:entries="@array/Langues"
+            android:entryValues="@array/Langues"
+            android:key="pref_key_langue"
+            android:defaultValue="Français"
+            android:persistent="true"
+            android:title="Langue" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_key_unites"
+        android:title="Unités">
+        <ListPreference
+            android:entries="@array/Taille"
+            android:entryValues="@array/Taille"
+            android:defaultValue="centimètres"
+            android:key="pref_key_taille"
+            android:persistent="true"
+            android:title="Taille" />
+        <ListPreference
+            android:entries="@array/Poids"
+            android:entryValues="@array/Poids"
+            android:defaultValue="kilogrammes"
+            android:key="pref_key_poids"
+            android:persistent="true"
+            android:title="Poids" />
+        <ListPreference
+            android:entries="@array/Distance"
+            android:entryValues="@array/Distance"
+            android:defaultValue="kilomètres"
+            android:key="pref_key_distance"
+            android:persistent="true"
+            android:title="Distance" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_key_notifications"
+        android:title="Notifications">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:persistent="true"
+            android:key="pref_key_chaque_objectif"
+            android:switchTextOn="On"
+            android:switchTextOff="Off"
+            android:title="A chaque objectif" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:persistent="true"
+            android:key="pref_key_rappels_journaliers"
+            android:switchTextOn="On"
+            android:switchTextOff="Off"
+            android:title="Rappels journaliers" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:persistent="true"
+            android:key="pref_key_chaque_succes"
+            android:switchTextOn="On"
+            android:switchTextOff="Off"
+            android:title="A chaque succès obtenu" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:persistent="true"
+            android:key="pref_key_retour_audio"
+            android:switchTextOn="On"
+            android:switchTextOff="Off"
+            android:title="Retour audio" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Périphérique"
+        android:key="pref_key_peripherique">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:persistent="true"
+            android:key="pref_key_montre_connectee"
+            android:switchTextOn="On"
+            android:switchTextOff="Off"
+            android:title="Avez-vous une montre connectée ?" />
+    </PreferenceCategory>
+</PreferenceScreen>

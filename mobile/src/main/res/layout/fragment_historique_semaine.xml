@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <View android:id="@+id/separator"
+        android:background="@color/MockupRedText"
+        android:layout_width = "fill_parent"
+        android:layout_height="1dip"
+        android:layout_centerVertical ="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp" />
+    <LinearLayout
+        android:id="@+id/histo_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.65"
+        android:orientation="vertical">
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlmpc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".45">
+
+        <com.liulishuo.magicprogresswidget.MagicProgressCircle
+            android:id="@+id/mpc"
+            android:layout_width="@dimen/mpc_size"
+            android:layout_height="@dimen/mpc_size"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:mpc_default_color="@color/mpc_default_color"
+            app:mpc_end_color="@color/mpc_end_color"
+            app:mpc_percent="0.0"
+            app:mpc_start_color="@color/mpc_start_color"
+            app:mpc_stroke_width="15dp" />
+
+        <TextView
+            android:id="@+id/qualité"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qualité des sessions"
+            android:textColor="#ff0000"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_margin="10dp" />
+
+        <com.mycardiopad.g1.mycardiopad.util.AnimTextView
+            android:id="@+id/atv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="58dp"
+            android:background="@android:color/transparent"
+            android:text="0"
+            android:textColor="#ff0000"
+            android:textSize="36sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</LinearLayout>

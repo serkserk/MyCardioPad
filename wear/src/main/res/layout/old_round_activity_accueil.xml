@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/relativeLayout"
+    tools:context=".MyActivity"
+    tools:deviceIds="wear_square"
+    android:background="#a40b0f"
+    android:padding="12dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_alignTop="@+id/informationTv"
+        android:layout_alignParentTop="false"
+        android:id="@+id/frameHeart">
+
+        <ImageButton
+            android:id="@+id/heartButton"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/mycardiopad_tiny"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:text="100"
+            android:padding="10dp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/informationTv"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Information TextView abcde"
+        android:maxLines="2"
+        android:maxWidth="120dp"
+
+        android:layout_alignEnd="@+id/frameLayout"
+
+        android:layout_centerVertical="true"
+        android:padding="10dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/frameLayout"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="max : "
+            android:textColor="@color/black"
+            android:layout_below="@+id/heartButton"
+            android:layout_toStartOf="@+id/informationTv"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="40dp" />
+
+        <TextView
+            android:id="@+id/min"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="min : "
+            android:layout_below="@+id/max"
+            android:layout_alignStart="@+id/max"
+            android:layout_toStartOf="@+id/informationTv"
+            android:layout_gravity="right|top"
+            android:layout_marginRight="50dp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="MyCardioPad"
+        android:id="@+id/time"
+        android:layout_above="@+id/frameHeart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp" />
+
+</RelativeLayout>

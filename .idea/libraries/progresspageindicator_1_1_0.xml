@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="progresspageindicator-1.1.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/mobile/build/intermediates/exploded-aar/com.siriscac/progresspageindicator/1.1.0/res" />
+      <root url="jar://$PROJECT_DIR$/mobile/build/intermediates/exploded-aar/com.siriscac/progresspageindicator/1.1.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.siriscac/progresspageindicator/1.1.0/18985f9ab358a208d48a1b3cff6aa8a0289769dd/progresspageindicator-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
