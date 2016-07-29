@@ -80,4 +80,15 @@
             android:switchTextOff="Off"
             android:title="Avez-vous une montre connectée ?" />
     </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Notification">
+        <Preference
+            android:title="Rappel de séance">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.mycardiopad.g1.mycardiopad"
+                android:targetClass="com.mycardiopad.g1.mycardiopad.activity.Activity_Notification" />
+        </Preference>
+    </PreferenceCategory>
+
 </PreferenceScreen>

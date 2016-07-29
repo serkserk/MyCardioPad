@@ -114,7 +114,7 @@ public class Fragment_Profile extends Fragment {
             txtInfo.setText(taille + " | " + poids + " | " + age + " ans");
 
             // Photo de profil
-            File photo = new File(getString(R.string.default_save_emplacement_user));
+            File photo = new File(getContext().getExternalFilesDir(null), "user.jpg");
             if (photo.exists()) {
                 Bitmap photo_utilisateur = BitmapFactory.decodeFile(photo.getAbsolutePath());
                 imgUtilisateur.setImageBitmap(photo_utilisateur);

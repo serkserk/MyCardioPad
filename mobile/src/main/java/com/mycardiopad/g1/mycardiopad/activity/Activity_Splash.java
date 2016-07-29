@@ -89,7 +89,6 @@ public class Activity_Splash extends Activity{
                 Intent i = new Intent(Activity_Splash.this, myclass);
                 startActivity(i);
 
-
                 //Fermeture du Splash Screen
                 Activity_Splash.this.finish();
                     }

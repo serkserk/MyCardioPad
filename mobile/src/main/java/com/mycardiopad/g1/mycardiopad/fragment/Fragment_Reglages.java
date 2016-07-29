@@ -74,6 +74,13 @@ public class Fragment_Reglages extends Fragment {
                                         .setCancelable(false)
                                         .setPositiveButton("J\'accepte", new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int bouton) {
+
+                                                SharedPreferences alarmTime;
+                                                alarmTime = getContext().getSharedPreferences("userDetails", 0);
+                                                SharedPreferences.Editor alarmTimeEdit = alarmTime.edit();
+                                                alarmTimeEdit.clear();
+                                                alarmTimeEdit.apply();
+
                                                 deleteAll();
                                             }
                                         })
@@ -118,7 +125,7 @@ public class Fragment_Reglages extends Fragment {
         new MyDBHandler_Succes(getActivity(), null, null, 1).deleteTable();
         new MyDBHandler_Capture(getActivity(), null, null, 1).deleteTable();
         new MyDBHandler_Programme(getActivity(), null, null, 1).deleteTable();
-        File photo = new File(getString(R.string.default_save_emplacement_user));
+        File photo = new File(getContext().getExternalFilesDir(null), "user.jpg");
         if (photo.exists()) {
             if(!photo.delete())
                 Log.e("Suppression image : ", "impossible");

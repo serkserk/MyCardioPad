@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,8 +63,7 @@
             <android.support.design.widget.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                app:backgroundTint="@color/MockupBlueBack"
+                app:backgroundTint="@color/accent"
                 android:src="@drawable/ic_camera_alt_white_24dp"
                 android:id="@+id/btnPhotoCNCI"
                 android:layout_margin="10dp" />
@@ -129,8 +127,7 @@
             <android.support.design.widget.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                app:backgroundTint="@color/MockupBlueBack"
+                app:backgroundTint="@color/accent"
                 android:src="@drawable/ic_camera_alt_white_24dp"
                 android:id="@+id/btnPhotoEE"
                 android:layout_margin="10dp" />

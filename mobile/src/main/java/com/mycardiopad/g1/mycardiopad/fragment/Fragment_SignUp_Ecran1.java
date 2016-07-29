@@ -188,7 +188,7 @@ public class Fragment_SignUp_Ecran1 extends Fragment implements SurfaceHolder.Ca
         handler = new Handler();
 
         //Photo
-        photo = new File(getString(R.string.default_save_emplacement_user));
+        photo = new File(getContext().getExternalFilesDir(null), "user.jpg");
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

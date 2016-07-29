@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -23,7 +24,7 @@ import com.mycardiopad.g1.mycardiopad.fragment.Fragment_SignUp_Ecran1;
 import com.mycardiopad.g1.mycardiopad.fragment.Fragment_SignUp_Ecran2;
 import com.mycardiopad.g1.mycardiopad.fragment.Fragment_SignUp_Ecran3;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
-import com.mycardiopad.g1.mycardiopad.util.Notification;
+import com.mycardiopad.g1.mycardiopad.util.CustomToast;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
 import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 
@@ -52,6 +53,7 @@ import okhttp3.Response;
  */
 public class Activity_SignUp extends AppCompatActivity {
 
+    Toolbar toolbar;
     public FloatingActionButton btnSuivant;
     private MyDBHandler_Compte db;
     private _Compte compte;
@@ -66,7 +68,9 @@ public class Activity_SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_signup_contener);
 
-
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Inscription (1 sur 3)");
 
         btnSuivant = (FloatingActionButton) findViewById(R.id.btnSuivant);
         btnPrecedant = (FloatingActionButton) findViewById(R.id.btnPrecedant);
@@ -92,6 +96,31 @@ public class Activity_SignUp extends AppCompatActivity {
         if(pager != null)
             pager.setAdapter(mPagerAdapter);
         final LinearLayout layout = (LinearLayout) findViewById(R.id.signup_contener);
+
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                if (pager.getCurrentItem() == 0) {
+                    getSupportActionBar().setTitle("Inscription (1 sur 3)");
+                }
+                if (pager.getCurrentItem() == 1) {
+                    getSupportActionBar().setTitle("Inscription (2 sur 3)");
+                }
+                if (pager.getCurrentItem() == 2) {
+                    getSupportActionBar().setTitle("Inscription (3 sur 3)");
+                }
+            }
+        });
 
         db = new MyDBHandler_Compte(getBaseContext(), null, null, 1);
 
@@ -172,7 +201,7 @@ public class Activity_SignUp extends AppCompatActivity {
                             compte.set_total_pas(0);
                             compte.set_id(db.lastRowCompte().get_id() + 1);
                             btnSuivant.show();
-                            
+
 
                             //Requête REST
                             Detection_Internet detection_internet = new Detection_Internet(getApplicationContext());
@@ -199,7 +228,7 @@ public class Activity_SignUp extends AppCompatActivity {
                                             ("cnci", "cnci.png", RequestBody.create(MediaType.parse("image/png"), CNCI));
                                 }
 
-                                File file = new File(getString(R.string.default_save_emplacement_user));
+                                File file = new File(getApplicationContext().getExternalFilesDir(null), "user.jpg");
 
                                 if (file.exists()) {
                                     multipartBuilder = multipartBuilder.addFormDataPart
@@ -217,7 +246,7 @@ public class Activity_SignUp extends AppCompatActivity {
                                 OkHttpSingleton.getInstance().newCall(request).enqueue(new Callback() {
                                     @Override
                                     public void onFailure(Call call, IOException e) {
-                                       new Notification(getApplicationContext()
+                                       new CustomToast(getApplicationContext()
                                                 , "Le serveur ne renvoie rien", SuperToast.Icon.Dark.EXIT);
                                     }
 
@@ -243,7 +272,7 @@ public class Activity_SignUp extends AppCompatActivity {
                             }
                         }
                     } else {
-                        new Notification(getApplicationContext()
+                        new CustomToast(getApplicationContext()
                                 , "Veuillez vous connecter à Internet", SuperToast.Icon.Dark.EXIT);
                     }
                 }
@@ -262,7 +291,7 @@ public class Activity_SignUp extends AppCompatActivity {
                 if (pager != null && pager.getCurrentItem() == 2) {
                     pager.setCurrentItem(1);
                     btnSuivant.setImageResource(R.drawable.ic_keyboard_arrow_right_white_24dp);
-                    btnSuivant.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.MockupBlueBack)));
+                    btnSuivant.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.accent)));
                 }
             }
         });

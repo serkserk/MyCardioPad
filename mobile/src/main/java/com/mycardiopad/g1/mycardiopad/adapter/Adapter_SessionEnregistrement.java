@@ -24,7 +24,6 @@ public class Adapter_SessionEnregistrement extends FragmentPagerAdapter {
         fragmentArrayList = new ArrayList<>();
 
         if(fc.equals("Avec FC")){   //Dans le cas ou il y a une montre connecté
-            fragmentArrayList.add(new Fragment_SessionEnregistrement_Ecran1());
             fragmentArrayList.add(new Fragment_SessionEnregistrement_Ecran2());
             fragmentArrayList.add(new Fragment_SessionEnregistrement_Ecran3());
         }else {         //Dans le cas contraire
@@ -66,10 +65,8 @@ public class Adapter_SessionEnregistrement extends FragmentPagerAdapter {
         if(fragmentArrayList.size()>1){
             switch (position) {
                 case 0:
-                    return "Chronomètre";
-                case 1:
                     return "Cercle de fréquence";
-                case 2:
+                case 1:
                     return "Graphique";
             }
         }else {

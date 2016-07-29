@@ -4,6 +4,7 @@ package com.mycardiopad.g1.mycardiopad.activity;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -29,7 +30,7 @@ import com.mycardiopad.g1.mycardiopad.fragment.Fragment_MonProgrammeEtVideo_Host
 import com.mycardiopad.g1.mycardiopad.fragment.Fragment_Profile;
 import com.mycardiopad.g1.mycardiopad.fragment.Fragment_Reglages;
 import com.mycardiopad.g1.mycardiopad.fragment.Fragment_Success;
-import com.mycardiopad.g1.mycardiopad.util.Notification;
+import com.mycardiopad.g1.mycardiopad.util.CustomToast;
 
 import java.io.File;
 
@@ -85,7 +86,7 @@ public class Activity_Main extends AppCompatActivity
             MyDBHandler_Compte dbHandler_compte = new MyDBHandler_Compte(this,"",null,1);
 
             //Création et affichage de la notification de bienvenue
-            new Notification(getApplicationContext(),"Bienvenue " +
+            new CustomToast(getApplicationContext(),"Bienvenue " +
                     dbHandler_compte.getCompte(0).get_prenom() + " !");
 
 
@@ -95,7 +96,7 @@ public class Activity_Main extends AppCompatActivity
                 // Log.e("FileImage",compte.get_path_photo());
                 utilisateur.setText(compte.get_nom() + " " + compte.get_prenom());
                 email.setText(compte.get_email());
-                File photo = new File(getString(R.string.default_save_emplacement_user));
+                File photo = new File(getApplicationContext().getExternalFilesDir(null), "user.jpg");
                 if(photo.exists()) {
                     Bitmap photo_image = BitmapFactory.decodeFile(photo.getAbsolutePath());
                     imgUtilisateur.setImageBitmap(photo_image);
@@ -260,6 +261,7 @@ public class Activity_Main extends AppCompatActivity
                                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
                         notificationManager.cancelAll();
+                        startActivity(new Intent(Activity_Main.this, Activity_Feedback.class));
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {

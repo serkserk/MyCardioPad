@@ -18,4 +18,5 @@ public class ServeurURL {
     public static final String ABOUT = MAIN_URL + "about/android.html";
     public static final String GET_CAPTURE_COUNT = MAIN_URL + "api/get_capture_count/?email=";
     public static final String ADD_CAPTURE = MAIN_URL + "api/add_captures/";
+    public static final String ADD_FEEDBACK = MAIN_URL + "api/add_feedbacks/";
 }

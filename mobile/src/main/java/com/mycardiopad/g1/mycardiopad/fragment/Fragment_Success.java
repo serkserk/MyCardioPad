@@ -15,7 +15,7 @@ import com.mycardiopad.g1.mycardiopad.adapter.Adapter_SuccessList;
 import com.mycardiopad.g1.mycardiopad.database.MyDBHandler_Compte;
 import com.mycardiopad.g1.mycardiopad.database.MyDBHandler_Succes;
 import com.mycardiopad.g1.mycardiopad.database._Succes;
-import com.mycardiopad.g1.mycardiopad.util.Notification;
+import com.mycardiopad.g1.mycardiopad.util.CustomToast;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
 import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 import com.mycardiopad.g1.mycardiopad.util.Succes;
@@ -74,7 +74,7 @@ public class Fragment_Success extends Fragment {
                     @Override
                     public void onFailure(Call call, IOException e) {
                         pd.dismiss();
-                        new Notification(getContext(), "Echec du chargement",
+                        new CustomToast(getContext(), "Echec du chargement",
                                 R.drawable.ic_action_cancel);
                     }
 
@@ -173,7 +173,7 @@ public class Fragment_Success extends Fragment {
                                                     });
 
                                                     // Notification pour le 1er succès
-                                                    new Notification(getContext(), "Vous venez de débloquer un succès !"
+                                                    new CustomToast(getContext(), "Vous venez de débloquer un succès !"
                                                             , R.drawable.ic_premiere_connexion);
                                                 }
                                             } catch (JSONException e) {

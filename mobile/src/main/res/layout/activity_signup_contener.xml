@@ -5,36 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/signup_contener"
-    android:background="@android:color/white">
+    android:backgroundTint="@color/primary">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:id="@+id/imageView4"
-        android:background="@drawable/ic_mycardiopad"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="5dp"
-        android:layout_weight="0.1"
-        android:scaleType="center" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Inscription d&apos;un nouvel utilisateur"
-        android:id="@+id/textView7"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:textColor="@color/MockupRedText" />
+        android:theme="@style/AppTheme.PopupOverlay">
 
-    <View android:id="@+id/separator"
-        android:background="@color/MockupRedText"
-        android:layout_width = "fill_parent"
-        android:layout_height="1dip"
-        android:layout_centerVertical ="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+    </android.support.design.widget.AppBarLayout>
 
     <com.mycardiopad.g1.mycardiopad.util.CustomViewPagerWithOutSwiping
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -42,9 +27,8 @@
         android:layout_height="match_parent"
         android:id="@+id/viewpager"
         android:layout_weight="0.8"
-        android:layout_marginTop="10dp">
+        android:layout_margin="12dp">
         </com.mycardiopad.g1.mycardiopad.util.CustomViewPagerWithOutSwiping>
-
 
     <LinearLayout
         android:orientation="horizontal"
@@ -54,7 +38,7 @@
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/MockupBlueBack"
+            app:backgroundTint="@color/accent"
             android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
             android:id="@+id/btnPrecedant"
             android:layout_marginRight="40dp"
@@ -64,7 +48,7 @@
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/MockupBlueBack"
+            app:backgroundTint="@color/accent"
             android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
             android:id="@+id/btnSuivant"
             android:layout_marginLeft="40dp"

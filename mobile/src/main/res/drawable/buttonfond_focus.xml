@@ -7,7 +7,7 @@
         android:bottomRightRadius="60dp"
         />
     <solid
-        android:color="@color/colorBlue"
+        android:color="@color/accent"
         />
     <padding
         android:left="0dp"
@@ -17,6 +17,6 @@
         />
     <stroke
         android:width="3dp"
-        android:color="@color/colorBlue"
+        android:color="@color/primary_dark"
         />
 </shape>

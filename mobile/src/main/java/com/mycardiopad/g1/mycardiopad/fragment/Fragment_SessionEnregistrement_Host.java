@@ -29,7 +29,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Chronometer;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -44,7 +44,7 @@ import com.mycardiopad.g1.mycardiopad.database.MyDBHandler_Succes;
 import com.mycardiopad.g1.mycardiopad.database._Capture;
 import com.mycardiopad.g1.mycardiopad.database._Succes;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
-import com.mycardiopad.g1.mycardiopad.util.Notification;
+import com.mycardiopad.g1.mycardiopad.util.CustomToast;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
 import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 import com.mycardiopad.g1.mycardiopad.util.services.SendToDataLayerThread;
@@ -80,7 +80,7 @@ public class Fragment_SessionEnregistrement_Host extends Fragment implements Goo
     private TextToSpeech tts;
     private MyDBHandler_Programme dbProgramme;
     private String time;
-    Chronometer mChronometer;
+    public TextView mChronometer3;
 
     public static final int NOTIFICATION_ID = 1;
 
@@ -92,21 +92,29 @@ public class Fragment_SessionEnregistrement_Host extends Fragment implements Goo
     private int maxFreq = 170;
     private int minFreq = 50;
 
+    public Bundle bundle;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_lancer_session_enregistrement_fragment_host, container, false);
 
+        mChronometer3 = (TextView) v.findViewById(R.id.txtStopWatch3);
+
+
+
         //Définition du min, max et du temps
         dbProgramme = new MyDBHandler_Programme(getActivity(), null, null, 1);
         dbCapture = new MyDBHandler_Capture(getActivity(),null,null,1);
-        Bundle bundle = getArguments();
+        bundle = getArguments();
         time = bundle.getString("time");
         if (time.equals("")) {
             time = "I"; // Dans le cas ou le temps n'est pas défini.
         }
         String fc = bundle.getString("mode");
+        if ( !(fc.equals("Avec FC") ) )
+            mChronometer3.setVisibility(View.GONE);
+
         tts = new TextToSpeech(getActivity(), this);    //Initialisation de la voix
 
         if(dbProgramme.numberLine() >0){
@@ -150,7 +158,7 @@ public class Fragment_SessionEnregistrement_Host extends Fragment implements Goo
                                 success.set_date_obtention(new Date());
                                 myDBHandler_succes.updateSucces(success);
                                 // Notification pour le deuxième succès
-                                Notification succes = new Notification(getContext(), "Vous venez de débloquer un succès !"
+                                CustomToast succes = new CustomToast(getContext(), "Vous venez de débloquer un succès !"
                                         , R.drawable.ic_premiere_session);
                             }
                         } catch (JSONException e) {
@@ -262,7 +270,7 @@ public class Fragment_SessionEnregistrement_Host extends Fragment implements Goo
         myPager.setAdapter(myPagerAdapter);
 
         if(fc.equals("Avec FC"))    //On place les cercles au centre de la nouvelle vue
-            myPager.setCurrentItem(1);
+            myPager.setCurrentItem(0);
 
         //Mise en place du titre
         PagerTitleStrip pts = (PagerTitleStrip) v.findViewById(R.id.pager_title_strip);
@@ -271,6 +279,16 @@ public class Fragment_SessionEnregistrement_Host extends Fragment implements Goo
 
         return v;
     }
+
+
+    /**
+     * Methode pour mettre en place un chronomètre via une méthode parente
+     * @param chronometer le chronomètre à mettre en place
+     */
+    public void setChronometer(String  chronometer) {
+        this.mChronometer3.setText(chronometer);
+    }
+
 
     /**
      * Lancement de l'enregistrement sur la montre
@@ -433,16 +451,20 @@ public class Fragment_SessionEnregistrement_Host extends Fragment implements Goo
                         @SuppressLint("DefaultLocale")
                         @Override
                         public void run() {
-                            if (myPager.getCurrentItem() == 0 ||
-                                    myPager.getCurrentItem() == 1) {
-
-                                ((Fragment_SessionEnregistrement_Ecran1) myPagerAdapter.getFragment(0)).setChronometer( String.format("%02d : %02d",
+                            if ( bundle.getString("mode").equals("Avec FC") ){
+                                mChronometer3.setText( String.format("%02d : %02d",
+                                        TimeUnit.MILLISECONDS.toMinutes(elapsed),
+                                        TimeUnit.MILLISECONDS.toSeconds(elapsed) -
+                                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(elapsed))
+                                )); }
+                                else {
+                                ((Fragment_SessionEnregistrement_Ecran1) myPagerAdapter.getFragment(0)).setChronometer(String.format("%02d : %02d",
                                         TimeUnit.MILLISECONDS.toMinutes(elapsed),
                                         TimeUnit.MILLISECONDS.toSeconds(elapsed) -
                                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(elapsed))
                                 ));
                             }
-                        }
+                            }
                     });
                 }catch(Exception e){ //Patch le plus dégueulasse du monde
                     Log.e("Fragment", "Le fragment est surement détruit");

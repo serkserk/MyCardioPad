@@ -34,7 +34,7 @@ public class Fragment_MonProgramme_Ecran1 extends Fragment {
         TextView txtActivité = (TextView) v.findViewById(R.id.TextActivite);
         TextView txtActivitéConseillé = (TextView) v.findViewById(R.id.TextActiviteConseille);
 
-        if(duree!=null){    //Affichage de l'exercice
+        if(!(duree.isEmpty())){    //Affichage de l'exercice
 
             imgActivite.setImageResource(getResIdFromActivityString(exercice));
             txtActivité.setText("En salle pendant " + duree +" minutes");

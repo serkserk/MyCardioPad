@@ -20,6 +20,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.CombinedChart;
@@ -54,6 +55,7 @@ public class Fragment_HistoriqueSemaine extends Fragment {
     LineData ldSemaine;
     MagicProgressCircle mpc;
     AnimTextView atv;
+    TextView fc;
     AnimatorSet set;
     Animation gone,visible;
     RelativeLayout rl;
@@ -113,6 +115,8 @@ public class Fragment_HistoriqueSemaine extends Fragment {
         atv = (AnimTextView) v.findViewById(R.id.atv);
         set = new AnimatorSet();
 
+        fc = (TextView) v.findViewById(R.id.fc);
+
         //Affectation des animations pour l'apparition et la disparition de la vue contenant le cercle
         gone = AnimationUtils.loadAnimation(getContext(),R.anim.gone_animation);
         visible = AnimationUtils.loadAnimation(getContext(),R.anim.visible_animation);
@@ -125,14 +129,12 @@ public class Fragment_HistoriqueSemaine extends Fragment {
         cc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Click sur x:" + cc.getX() + ", y : " + cc.getX(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Click sur x:" + cc.getX() + ", y : " + cc.getX(), Toast.LENGTH_SHORT).show();
                 rl.setVisibility(View.VISIBLE);
                 rl.startAnimation(visible);
 
                 int freqMax = myDBHandler_Programme.lastRowProgramme().get_maxFreq();
                 int freqMin = myDBHandler_Programme.lastRowProgramme().get_minFreq();
-
-
 
                 /***
                  * Somme du temps au dessus du max
@@ -146,7 +148,6 @@ public class Fragment_HistoriqueSemaine extends Fragment {
                 Calendar cal = Calendar.getInstance();
                 cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
 
-
                 boolean premierFoisMax = true;
                 boolean premierFoisMin = true;
 
@@ -158,13 +159,9 @@ public class Fragment_HistoriqueSemaine extends Fragment {
                 long timeMinFirst = 0;
                 long timeMaxFirst = 0;
 
-
-
                 long timeMax;
                 long timeMin;
                 long tempsExercice = 0;
-
-
 
                 //Pour les jours de la semaine
                 long nbLine = myDBHandler_capture.numberLine();
@@ -175,7 +172,6 @@ public class Fragment_HistoriqueSemaine extends Fragment {
                         if(cal.get(Calendar.YEAR) == cap.getYear() &&
                                 cal.get(Calendar.MONTH) == cap.getMonth() &&
                                 cal.get(Calendar.DAY_OF_MONTH) == cap.getDay()){
-
 
                             //Dans ce cas on est sur la bonne journée
 
@@ -201,7 +197,6 @@ public class Fragment_HistoriqueSemaine extends Fragment {
                                     }
                                 }
                                 x+=1;
-
 
                             }
                             //Dans le cas ou l'enregistrement est sur true
@@ -231,7 +226,6 @@ public class Fragment_HistoriqueSemaine extends Fragment {
                                 }
                                 x+=1;
 
-
                             }
                             //Dans le cas ou l'enregistrement est sur true
                             if(!premierFoisMax){    //Fin de l'enregistrement de la date min
@@ -252,6 +246,7 @@ public class Fragment_HistoriqueSemaine extends Fragment {
                 defineMagicCircle(mpc,atv,iq/101f,(int)iq); //101 pour que dans le cas ou nous avons un IQ = 100, le cercle s'affiche quand même à une valeur proche de 100
 
             }
+
         });
         //Permet de faire disparaître la vue contenant le cercle de qualité en cas de clic sur l'ensemble de l'écran hormis le graphique
         v.setOnClickListener(new View.OnClickListener() {
@@ -323,11 +318,7 @@ public class Fragment_HistoriqueSemaine extends Fragment {
                     }else{
                         tabEntry[i] = new Entry(FreqCardMoy,i);
                     }
-
-
-
-
-
+                    fc.setText( tabEntry[i].toString() );
 
 
                 }

@@ -21,12 +21,28 @@
 
     </android.support.v4.view.ViewPager>
 
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_margin="4dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/MockupRedText" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00:00"
+        android:textColor="@color/MockupRedText"
+        android:id="@+id/txtStopWatch3"
+        android:textSize="30sp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_margin="6dp"/>
+    </android.support.v7.widget.LinearLayoutCompat>
 
 </LinearLayout>

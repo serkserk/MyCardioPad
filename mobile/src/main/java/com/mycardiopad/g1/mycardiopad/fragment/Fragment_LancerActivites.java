@@ -221,8 +221,11 @@ public class Fragment_LancerActivites extends Fragment{
         //Configuration du fragment
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         mode = s;
-        builder.setMessage("Etes-vous prêt à lancer votre session ?")
+        builder.setMessage("Vous reconnaissez ne pas avoir de douleur anormale sur " +
+                "les derniers jours, ne pas vous sentir essoufflé ni avoir quelconque " +
+                "événement qui pourrait nécessiter une visite médicale")
                 .setCancelable(false)
+                .setIcon(R.drawable.ic_error_outline_black_48dp)
                 .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int bouton) {
                         lancementSessionEnregistrement();
@@ -285,7 +288,7 @@ public class Fragment_LancerActivites extends Fragment{
         @Override
         public void onDestroyView() {
             super.onDestroyView();
-            dialog.setTitle("Lancer session");
+            dialog.setTitle("Attention");
             dialog.show();
         }
     }

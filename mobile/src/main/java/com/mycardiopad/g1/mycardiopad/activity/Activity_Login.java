@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -17,7 +16,6 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +28,7 @@ import com.mycardiopad.g1.mycardiopad.database._Compte;
 import com.mycardiopad.g1.mycardiopad.database._Programme;
 import com.mycardiopad.g1.mycardiopad.database._Succes;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
-import com.mycardiopad.g1.mycardiopad.util.Notification;
+import com.mycardiopad.g1.mycardiopad.util.CustomToast;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
 import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 import com.squareup.picasso.Picasso;
@@ -83,17 +81,12 @@ public class Activity_Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        if(getSupportActionBar() != null)
-            getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-
-
-        getSupportActionBar().setCustomView(R.layout.actionbar);
-
         //Mise en forme du formulaire de login
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         TextView tv = (TextView) findViewById(R.id.name);
         mPasswordView = (EditText) findViewById(R.id.password);
-        ImageView imageView = (ImageView) findViewById(R.id.image_password_miss);
+        //ImageView imageView = (ImageView) findViewById(R.id.image_password_miss);
+        TextView textView = (TextView) findViewById(R.id.password_miss);
         Button mEmailSignInButton = (Button) findViewById(R.id.sign_in_button);
         Button mRegisterButton = (Button) findViewById(R.id.register_in_button);
 
@@ -112,9 +105,8 @@ public class Activity_Login extends AppCompatActivity {
             finish();
         }
 
-        assert imageView != null;
-        imageView.setOnClickListener(new OnClickListener() {
-
+        //assert imageView != null;
+        textView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = mEmailView.getText().toString().trim();
@@ -314,7 +306,7 @@ public class Activity_Login extends AppCompatActivity {
             okHttpCall(request);
         } else {
                 hideDialog();
-            new Notification(getApplicationContext()
+            new CustomToast(getApplicationContext()
                     , "Veuillez vous connecter à Internet", SuperToast.Icon.Dark.EXIT);
         }
     }
@@ -324,7 +316,7 @@ public class Activity_Login extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 hideDialog();
-                new Notification(getApplicationContext()
+                new CustomToast(getApplicationContext()
                         , "Erreur lors de la connexion au serveur, veuillez réessayer ultérieurement"
                         , SuperToast.Icon.Dark.EXIT);
                 valeurEnvoi[0] = false;
@@ -377,7 +369,7 @@ public class Activity_Login extends AppCompatActivity {
 
                     } else {
                         try{
-                            new Notification(getApplicationContext(), "Le serveur renvoie une erreur", SuperToast.Icon.Dark.EXIT);
+                            new CustomToast(getApplicationContext(), "Le serveur renvoie une erreur", SuperToast.Icon.Dark.EXIT);
                         }catch (Exception ignored){}
                         valeurEnvoi[0] = false;
                     }
@@ -498,7 +490,7 @@ public class Activity_Login extends AppCompatActivity {
                    id + "/pp/pp_" + id + ".jpeg").get();
             FileOutputStream out = null;
             try {
-                File file = new File(getString(R.string.default_save_emplacement_user));
+                File file = new File(getApplicationContext().getExternalFilesDir(null), "user.jpg");
                 out = new FileOutputStream(file);
                 photo.compress(Bitmap.CompressFormat.JPEG, 70, out);
             } catch (Exception e) {

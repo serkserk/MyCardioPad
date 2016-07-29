@@ -49,7 +49,7 @@
             android:autoLink="none"
             android:clickable="true"
             android:layout_marginLeft="20dp"
-            android:textColor="#ff73b5ff"
+            android:textColor="@color/accent"
             android:textStyle="italic" />
     </LinearLayout>
 

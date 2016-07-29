@@ -1,379 +1,391 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:focusable="true"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            >
-
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/CameraCapture"
-                    android:layout_weight="0.6">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_weight="0.8">
-
-
-                        <SurfaceView android:id="@+id/surface_camera"
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_centerHorizontal="true">
-                        </SurfaceView>
-
-                        <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:id="@+id/imageViewCamera"
-                            android:scaleType="centerCrop"
-                            android:layout_centerHorizontal="true"
-                            android:src="@drawable/ic_account_circle_black_48dp" />
-
-                        <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:id="@+id/imageViewFixe"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/circle_surface_border_blanc"
-                            android:layout_alignParentTop="false" />
-
-                    </RelativeLayout>
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.2"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center_horizontal">
+                        android:id="@+id/CameraCapture"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.6"
+                        android:orientation="vertical">
 
-                        <Switch
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/switchCamera"
-                            android:layout_alignParentTop="false"
-                            android:layout_centerHorizontal="true"
-                            android:layout_alignParentBottom="true"
-                            android:layout_above="@+id/imageViewFixe"
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
                             android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal" />
+                            android:layout_weight="0.8">
+
+
+                            <SurfaceView
+                                android:id="@+id/surface_camera"
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"></SurfaceView>
+
+                            <ImageView
+                                android:id="@+id/imageViewCamera"
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:layout_centerHorizontal="true"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_account_circle_black_48dp" />
+
+                            <ImageView
+                                android:id="@+id/imageViewFixe"
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:layout_alignParentTop="false"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/circle_surface_border_blanc" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.2"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <Switch
+                                android:id="@+id/switchCamera"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/imageViewFixe"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentTop="false"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center_horizontal" />
+                        </LinearLayout>
+
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/btnPhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_camera_alt_white_24dp"
+                        app:backgroundTint="@color/accent" />
+
 
                 </LinearLayout>
 
             </LinearLayout>
 
+
             <LinearLayout
-                android:orientation="horizontal"
+                android:id="@+id/GrpView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical|center_horizontal">
-
-                <android.support.design.widget.FloatingActionButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    app:backgroundTint="@color/MockupBlueBack"
-                    android:src="@drawable/ic_camera_alt_white_24dp"
-                    android:id="@+id/btnPhoto" />
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/GrpView">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.7">
-
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                          >
-
-                            <AutoCompleteTextView
-                                android:id="@+id/editNom"
-                                android:inputType="textCapSentences"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/nom"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:textColorHint="@color/colorBlue"/>
-                        </android.support.design.widget.TextInputLayout>
-
-
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                          >
-
-                            <AutoCompleteTextView
-                                android:id="@+id/editPrenom"
-                                android:inputType="textCapSentences"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pr_nom"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:textColorHint="@color/colorBlue"/>
-                        </android.support.design.widget.TextInputLayout>
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginTop="5dp" >
+                            android:layout_weight="0.7"
+                            android:orientation="vertical">
 
                             <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_gravity="center_horizontal"
-                                android:gravity="center" >
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/editNom"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="@string/nom"
+                                        android:inputType="textCapSentences"
+                                        android:maxLines="1"
+                                        android:singleLine="true"
+                                        android:textColorHint="@color/colorBlue" />
+                                </android.support.design.widget.TextInputLayout>
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/editPrenom"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="@string/pr_nom"
+                                        android:inputType="textCapSentences"
+                                        android:maxLines="1"
+                                        android:singleLine="true"
+                                        android:textColorHint="@color/colorBlue" />
+                                </android.support.design.widget.TextInputLayout>
 
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center" >
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
 
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                </LinearLayout>
                             </LinearLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            </android.support.design.widget.TextInputLayout>
+
                         </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
+                            <AutoCompleteTextView
+                                android:id="@+id/editEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/adresse_email"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColorHint="@color/colorBlue" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/editPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/mot_de_passe"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColorHint="@color/colorBlue" />
                         </android.support.design.widget.TextInputLayout>
 
                     </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.7">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/editPoids"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/poids_kg"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColorHint="@color/colorBlue" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.7">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/editTaille"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/taille_cm"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColorHint="@color/colorBlue" />
+
+                    </android.support.design.widget.TextInputLayout>
+
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+
+                    <CheckBox
+                        android:id="@+id/chkHomme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/homme" />
+
+                    <CheckBox
+                        android:id="@+id/chkFemme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/femme" />
+                </LinearLayout>
+
+
             </LinearLayout>
 
+
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginRight="10dp" >
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/editEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/adresse_email"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:textColorHint="@color/colorBlue"/>
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    <AutoCompleteTextView
-                        android:id="@+id/editPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/mot_de_passe"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:textColorHint="@color/colorBlue"/>
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.7"
-                    android:layout_gravity="center">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/editPoids"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/poids_kg"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:textColorHint="@color/colorBlue"
-                        android:inputType="phone"/>
-                </android.support.design.widget.TextInputLayout>
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/femme"
-                    android:id="@+id/chkFemme"
-                    android:layout_gravity="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.7"
-                    android:layout_gravity="center">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/editTaille"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/taille_cm"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:textColorHint="@color/colorBlue"
-                        android:inputType="phone"/>
-
-                    </android.support.design.widget.TextInputLayout>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/homme"
-                android:id="@+id/chkHomme"
-                android:layout_gravity="center" />
-                </LinearLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:id="@+id/mTextDate"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:layout_gravity="center" />
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/mTextDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="JJ/MM/AAAA"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" >
+                </LinearLayout>
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:text="Date de naissance"
-                    android:id="@+id/btnBirth"
-                    android:textColor="#FFFFFF"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/boutton_change"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp" />
+                    android:orientation="vertical">
 
+                    <Button
+                        android:id="@+id/btnBirth"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/boutton_change"
+                        android:text="Date de naissance"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>

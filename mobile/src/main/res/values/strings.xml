@@ -5,7 +5,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <!-- Strings related to login -->
     <string name="prompt_email">Identifiant</string>
     <string name="prompt_password">Mot de passe</string>
     <string name="action_sign_in">Connexion</string>
@@ -58,7 +57,6 @@
     <string name="licences">Licences open source</string>
     <string name="peripherie">Périphérique</string>
     <string name="montre">Avez vous une montre connectée ?</string>
-    <string name="default_save_emplacement_user">/sdcard/user.jpeg</string>
     <string name="user_default">nom de l\'utilisateur</string>
     <string name="user_email_deault"><![CDATA[email.utilisateur&gmail.com]]></string>
     <string name="email_envoyé">Votre mot de passe est envoyé à votre boîte mail</string>

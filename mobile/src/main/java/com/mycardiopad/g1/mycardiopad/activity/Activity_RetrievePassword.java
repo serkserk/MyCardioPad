@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.mycardiopad.g1.mycardiopad.R;
 import com.mycardiopad.g1.mycardiopad.util.Detection_Internet;
-import com.mycardiopad.g1.mycardiopad.util.Notification;
+import com.mycardiopad.g1.mycardiopad.util.CustomToast;
 import com.mycardiopad.g1.mycardiopad.util.OkHttpSingleton;
 import com.mycardiopad.g1.mycardiopad.util.ServeurURL;
 
@@ -133,7 +133,7 @@ public class Activity_RetrievePassword  extends AppCompatActivity {
                 @Override
                 public void onFailure(Call call, IOException e) {
                     hideDialog();
-                    new Notification(getApplicationContext()
+                    new CustomToast(getApplicationContext()
                             , "Erreur lors de la connexion au serveur, veuillez réessayer ultérieurement"
                             , SuperToast.Icon.Dark.EXIT);
                 }

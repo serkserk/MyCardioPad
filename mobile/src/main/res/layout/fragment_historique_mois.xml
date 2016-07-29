@@ -9,7 +9,7 @@
         android:layout_height="1dip"
         android:layout_centerVertical ="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:layout_gravity="center_horizontal"
